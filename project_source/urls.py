@@ -21,9 +21,9 @@ urlpatterns = [
 
     path('admin/', admin.site.urls),
     # Apps URLs included
-    path('', include('first_app.urls')),
-    path('', include('second_app_user.urls')),
-    path('', include('third_app_forms.urls')),
-    path('', include('fourth_app_reg_login_logout.urls')),
+    path('root', include('first_app.urls')),
+    path('root', include('second_app_user.urls')),
+    path('root', include('third_app_forms.urls')),
+    path('root', include('fourth_app_reg_login_logout.urls')),
 
 ]
