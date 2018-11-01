@@ -25,7 +25,7 @@ SECRET_KEY = 'cjix8uphgp388#$y+1-y05=b$&@g9w_sh@_5wzzi##&e+_azmi'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['galib04.pythonanywhere.com']
 
 
 # Application definition
