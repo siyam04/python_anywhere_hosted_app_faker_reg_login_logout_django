@@ -1,0 +1,26 @@
+{% extends 'fourth_app_reg_login_logout/base.html' %}
+{% load staticfiles %}
+
+<title>{% block title %}Login{% endblock %}</title>
+
+{% block content %}
+
+    <div class="container">
+        <div class="jumbotron">
+
+          <h1>Please Login</h1>
+
+            <form method="post" action="{% url 'user-login' %}">
+              {% csrf_token %}
+              {# A more "HTML" way of creating the login form#}
+              <label for="username">Username:</label>
+              <input class="form-control" type="text" name="username" placeholder="Username">
+              <label for="password"></label>
+              <input class="form-control" type="password" name="password" placeholder="Password">
+              <input type="submit" name="" value="Login">
+            </form>
+
+        </div>
+    </div>
+
+{% endblock %}

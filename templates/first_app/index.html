@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+{% load staticfiles %}
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Django Level Two</title>
+    <link rel="stylesheet" href="{% static "css/style.css" %}"/>
+  </head>
+
+  <body>
+    <h1>Dashboard</h1>
+    <h2>Here are all access records:</h2>
+
+    <div class="djangtwo">
+
+      {% if web_pages_list %}
+          <table>
+            <th>Serial</th>
+            <th>Site Name</th>
+            <th>Date Accessed</th>
+
+            {% for web_lists in web_pages_list %}
+              <tr>
+                <td>{{ web_lists.id }}</td>
+                <td>{{ web_lists.name }}</td>
+                <td>{{ web_lists.date }}</td>
+              </tr>
+            {% endfor %}
+          </table>
+
+      {% else %}
+        <p>No Access Records. Table Not Created.</p>
+      {% endif %}
+
+    </div>
+  </body>
+
+</html>
