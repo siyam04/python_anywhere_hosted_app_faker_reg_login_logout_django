@@ -15,15 +15,31 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf import settings
+from django.conf.urls.static import static
 
 
 urlpatterns = [
 
     path('admin/', admin.site.urls),
     # Apps URLs included
-    path('root', include('first_app.urls')),
-    path('root', include('second_app_user.urls')),
-    path('root', include('third_app_forms.urls')),
-    path('root', include('fourth_app_reg_login_logout.urls')),
+    path('root/', include('first_app.urls')),
+    path('root/', include('second_app_user.urls')),
+    path('root/', include('third_app_forms.urls')),
+    path('root/', include('fourth_app_reg_login_logout.urls')),
 
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+# Project source URL Debugging integration
+if settings.DEBUG:
+    import debug_toolbar
+
+    urlpatterns = [
+
+        path('__debug__/', include(debug_toolbar.urls)),
+
+    ] + urlpatterns
+
+
+
+

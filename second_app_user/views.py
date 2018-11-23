@@ -3,10 +3,10 @@ from django.shortcuts import render
 from second_app_user.models import User
 
 
-# def index2(request):
-#     """ Basic Views """
-#     templates = 'second_app_user/index.html'
-#     return render(request, templates)
+def index2(request):
+    """ Basic Views """
+    templates = 'second_app_user/index.html'
+    return render(request, templates)
 
 
 def users(request):
