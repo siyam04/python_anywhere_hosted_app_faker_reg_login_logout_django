@@ -1,0 +1,5 @@
+django-admin.py script_name
+OR,
+django-admin populate_first_app.py
+OR,
+** python populate_first_app.py
